@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <script src="http://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-neutral-100 h-screen w-screen font-mono">
+    
+    <nav id="navbar" class="fixed h-20 w-screen overflow-hidden text-black bg-neutral-100 border-b-4 border-black flex justify-center items-center">
+        <h1 class="text-5xl font-semibold">NAME_YOUR_DATA</h1>
+    </nav>
+    
+    <section class="flex justify-center items-center h-screen w-screen flex-col gap-4">
+        <div id="colorPicker" class="rounded-lg grid grid-rows-3 grid-flow-col p-0.5 place-items-center gap-1">
+            <script> // This is a script that generates the color picker
+                for (let i = 0; i < 7; i++) {
+                    let colors = ["neutral","red","yellow","green","cyan","blue","fuchsia"];
+                    for (let j = 0; j < 3; j++) {
+                        let text = `<div class='bg-${colors[i%7]}-${((j%3)*200)+300} w-10 h-10 rounded-md cursor-pointer select-none'></div>`;
+                        document.writeln(text);
+                    }
+                }
+                </script>
+        </div>
+        <div id="canvas" class="rounded-xl border-neutral-300 border-4 bg-neutral-800 grid grid-cols-6 p-2 gap-0.5 place-items-center">
+            <script> // This is a script that generates the canvas
+                for (let i = 0; i < (8*6); i++) {
+                    let text = "<div class='bg-neutral-300 w-12 h-12 rounded-md cursor-pointer select-none'></div>"
+                    document.writeln(text);
+                }
+                </script>
+        </div>
+        <div class="rounded-lg border-neutral-200 border-4 max-w-sm p-1 break-words leading-tight">
+            <p class="font-semibold">Y48F</p>
+        </div>
+    </section>
+    
+    <div id="background" class="fixed h-screen w-screen overflow-hidden -z-10 select-none">
+        <div class="fixed right-6 top-1/4 -rotate-90 translate-x-1/2 translate-y-1/2 text-4xl font-semibold">DATA_CREATOR</div>
+        <div class="fixed left-6 bottom-1/4 rotate-90 -translate-x-1/2 translate-y-1/2 text-4xl font-semibold">E44X4FA3</div>
+    </div>
+
+    <div id="overlay" class="fixed z-10">
+
+    </div> 
+
+</body>
+<script src="js/function_01.js"></script>
+</html>
