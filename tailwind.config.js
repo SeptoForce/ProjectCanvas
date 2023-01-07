@@ -2,7 +2,10 @@
 module.exports = {
   content: [],
   theme: {
-    extend: {},
-  },
+    fontFamily:{
+        'sans': ['Figtree'],
+        'mono': ['JetBrains Mono'],
+    }
+}, 
   plugins: [],
 }
