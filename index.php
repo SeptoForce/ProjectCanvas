@@ -31,7 +31,7 @@
         <h1 class="text-9xl transition-all">_Welcome</h1>
         <form id="loginForm" action="index.php" method="post" class=" <?php echo $openlogin?"flex":"hidden";?> flex-col items-center justify-center gap-2">
             <div class="w-80 flex flex-col">
-                <input type="email" name="login_email" id="login_email" class="w-full h-12 bg-neutral-100 border-2 border-b border-neutral-300 rounded-t-2xl px-4 text-lg" placeholder="email">
+                <input type="text" name="login_email" id="login_email" class="w-full h-12 bg-neutral-100 border-2 border-b border-neutral-300 rounded-t-2xl px-4 text-lg" placeholder="username or email">
                 <input type="password" name="login_password" id="login_password" class="w-full h-12 bg-neutral-100 border-2 border-t border-neutral-300 rounded-b-2xl px-4 text-lg" placeholder="password">
                 <div class="flex items-center gap-2 justify-end mt-3">
                     <input type="checkbox" name="remember" id="remember" class="w-5 h-5 peer">
@@ -46,6 +46,7 @@
                     <input type="text" name="register_lastName" id="lastName" class="w-full h-12 bg-neutral-100 border-2 border-l border-neutral-300 rounded-r-xl px-4 text-lg" placeholder="last name">
                 </div>
                 <input type="text" name="register_username" id="username" class="w-full h-12 bg-neutral-100 border-2 border-neutral-300 rounded-xl px-4 text-lg mb-2" placeholder="username">
+                <p id="emailErrorMessage" class="text-orange-600"></p>
                 <input type="email" name="register_email" id="register_email" class="w-full h-12 bg-neutral-100 border-2 border-neutral-300 rounded-xl px-4 text-lg mb-2" placeholder="email">
                 <p id="passwordErrorMessage" class="text-orange-600"></p>
                 <input type="password" name="register_password" id="register_password" class="w-full h-12 bg-neutral-100 border-2 border-b border-neutral-300 rounded-t-xl px-4 text-lg" placeholder="password">
@@ -53,7 +54,7 @@
             </div>
         </form>
         <div class="flex justify-center items-center gap-4 w-80">
-            <div id="registerButton" class="w-full h-12 bg-neutral-900 flex justify-center items-center border-2 border-neutral-900 rounded-2xl select-none cursor-pointer drop-shadow-[0px_2px_10px_rgb(0,0,0,0.2)]">
+            <div id="registerButton" class="w-full h-12 bg-neutral-900 hover:bg-neutral-800 transition-all flex justify-center items-center border-2 border-neutral-900 rounded-2xl select-none cursor-pointer drop-shadow-[0px_2px_10px_rgb(0,0,0,0.2)]">
                 <p class="text-center text-neutral-100">register</p>
             </div>
             <div id="loginButton" class="w-full h-12 bg-orange-600 flex justify-center items-center border-2 border-orange-600 hover:bg-neutral-100 rounded-2xl group transition-all select-none cursor-pointer drop-shadow-[0px_2px_10px_rgb(0,0,0,0.2)]">

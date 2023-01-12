@@ -5,7 +5,7 @@ $connect = mysqli_connect("localhost", "root", "", "projectcanvas");
 if(isset($_POST['login_email']) && isset($_POST['login_password'])){
     $email = $_POST['login_email'];
     $password = $_POST['login_password'];
-    $query = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
+    $query = "SELECT * FROM users WHERE email = '$email' AND password = '$password' or username = '$email' AND password = '$password'";
     $result = mysqli_query($connect, $query);
     if(mysqli_num_rows($result) > 0){
         $row = mysqli_fetch_assoc($result);
@@ -23,6 +23,6 @@ if(isset($_POST['login_email']) && isset($_POST['login_password'])){
     }
     else{
         mysqli_close($connect);
-        echo "Wrong email or password";
+        echo "Wrong username, email or password";
     }
 }

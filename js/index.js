@@ -59,6 +59,10 @@ registerButton.addEventListener('click', () => {
         currentState = 'register';
     } else {
         let check = true;
+        const emailErrorMessage = document.getElementById('emailErrorMessage');
+        const passwordErrorMessage = document.getElementById('passwordErrorMessage');
+        emailErrorMessage.innerHTML = '';
+        passwordErrorMessage.innerHTML = '';
         
         let registrationFields = document.querySelectorAll('#registerForm input');
 
@@ -68,6 +72,20 @@ registerButton.addEventListener('click', () => {
                 check = false;
             }
         });
+
+        if(check == false){
+            return;
+        }
+
+    //check if email is valid using regex
+        let email = document.getElementById('register_email').value;
+        let emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        if(!emailRegex.test(email)){
+            emailErrorMessage.innerHTML = 'Email is not valid!';
+            check = false;
+        }else{
+            emailErrorMessage.innerHTML = '';
+        }
         
         if(check == false){
             return;
@@ -75,7 +93,7 @@ registerButton.addEventListener('click', () => {
         if(document.getElementById('register_password').value == document.getElementById('repeat_password').value){
             registerForm.submit();
         } else {
-            document.getElementById('passwordErrorMessage').innerHTML = 'Passwords do not match!';
+            passwordErrorMessage.innerHTML = 'Passwords do not match!';
         }
     }
 });
