@@ -19,11 +19,11 @@ if(isset($_POST['register_email']) && isset($_POST['register_password']) && isse
         $query = "INSERT INTO users (email, password, firstname, lastname, username, currency) VALUES ('$email', '$password', '$firstName', '$lastName', '$username', '$currency')";
         $result = mysqli_query($connect, $query);
         if($result){
-            mysqli_close($connection);
+            mysqli_close($connect);
             echo "User registered";
         }
         else{
-            mysqli_close($connection);
+            mysqli_close($connect);
             echo "Error";
         }
     }
