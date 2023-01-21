@@ -34,7 +34,11 @@ function ChangePassword() {
             passwordMessage.innerText = "Password change failed";
             passwordMessage.classList.remove("invisible");
         }
-    }
-    xmlhttp.open("POST", "../api/changePassword.php?password=" + newPassword.value, true);
+    };
+    xmlhttp.open(
+        "POST",
+        "../api/changePassword.php?password=" + newPassword.value,
+        true
+    );
     xmlhttp.send();
 }

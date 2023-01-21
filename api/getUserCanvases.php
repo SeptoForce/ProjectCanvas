@@ -1,5 +1,6 @@
 <?php
 $username = $_REQUEST['username'];
+echo $username;
 $connection = mysqli_connect("localhost", "root", "", "projectcanvas");
 
 $getUsersOwnerships = "SELECT * FROM ownershiptransfer WHERE id IN (SELECT MAX(id) FROM ownershiptransfer GROUP BY designID) and ownershiptransfer.ownerID = (SELECT id FROM users WHERE username = '$username')";

@@ -10,8 +10,7 @@
         tailwind.config = {
             theme: {
                 fontFamily:{
-                    'sans': ['Figtree'],
-                    'mono': ['JetBrains Mono'],
+                    'sans': ['Figtree']
                 }
             }
         }
@@ -51,6 +50,7 @@
         <p>This project is deigned and developed by Franko Zarkovic for Algebra University College.</p>
     </div>
 </body>
-<script src="../js/animatedBackground.js"></script>
-<script src="../js/finder.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+<script src="../jQ/animatedBackground.js"></script>
+<script src="../jQ/finder.js"></script>
 </html>

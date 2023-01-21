@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project</title>
-    <script src="http://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                fontFamily:{
-                    'sans': ['Figtree'],
-                    'mono': ['JetBrains Mono'],
-                }
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project</title>
+<script src="http://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            fontFamily:{
+                'sans': ['Figtree']
             }
         }
-  </script>
+    }
+</script>
 </head>
 <?php
     $username = $_GET['username'];
@@ -51,6 +50,7 @@
         <p>This project is deigned and developed by Franko Zarkovic for Algebra University College.</p>
     </div>
 </body>
-<script src="../js/animatedBackground.js"></script>
-<script src="../js/collections.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+<script src="../jQ/animatedBackground.js"></script>
+<script src="../jQ/collections.js"></script>
 </html>
