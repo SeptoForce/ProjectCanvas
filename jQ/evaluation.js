@@ -12,7 +12,7 @@ $(document).ready(function () {
     let canvas1ID = 0;
     let canvas2ID = 0;
 
-    const ColorDefinitions = {
+    const colorDefinitions = {
         n: "neutral",
         r: "red",
         y: "yellow",
@@ -29,6 +29,8 @@ $(document).ready(function () {
             url: "../api/getCanvasOptions.php",
             data: { canvas1: canvas1ID, canvas2: canvas2ID },
             success: function (response) {
+                console.log(response);
+                response = JSON.parse(response);
                 if (response.success) {
                     canvas1ID = response.canvasID1;
                     canvas2ID = response.canvasID2;
@@ -40,7 +42,7 @@ $(document).ready(function () {
 
                     canvas1Cells.each((index, cell) => {
                         let color =
-                            ColorDefinitions[canvas1CodeArray[index][0]];
+                            colorDefinitions[canvas1CodeArray[index][0]];
                         let brightness = canvas1CodeArray[index][1];
                         $(cell)
                             .removeClass(function (index, className) {
@@ -53,7 +55,7 @@ $(document).ready(function () {
 
                     canvas2Cells.each((index, cell) => {
                         let color =
-                            ColorDefinitions[canvas2CodeArray[index][0]];
+                            colorDefinitions[canvas2CodeArray[index][0]];
                         let brightness = canvas2CodeArray[index][1];
                         $(cell)
                             .removeClass(function (index, className) {
@@ -102,6 +104,7 @@ $(document).ready(function () {
             url: "../api/processSelection.php",
             data: { selectedCanvas: selectedCanvas },
             success: function (response) {
+                response = JSON.parse(response);
                 if (response.success) {
                     rewardAmountValue += 10;
                     rewardAmount.html("C " + rewardAmountValue);

@@ -7,6 +7,7 @@ $(function () {
     if (canvasCode === null) {
         canvasCode = GenerateCanvasCode();
         window.history.replaceState(null, null, "?canvas=" + canvasCode);
+        SetBegginingCanvas(canvasCode);
     } else {
         SetBegginingCanvas(canvasCode);
     }
@@ -98,7 +99,6 @@ $(function () {
             data: { canvasCode: canvasCode },
             success: function (response) {
                 response = JSON.parse(response);
-                console.log(response);
                 if (response.exists === "true") {
                     $("#canvas_canvasNameField").hide();
                     $("#canvas_canvasName").show();
@@ -280,7 +280,7 @@ $(function () {
         let canvasCodeArray = canvasCode.match(/.{1,2}/g);
         $.each(canvasPixels, function (index, pixel) {
             let color =
-                ColorDefinitions[canvasCodeArray[index].substring(0, 1)];
+                colorDefinitions[canvasCodeArray[index].substring(0, 1)];
             let shade = canvasCodeArray[index].substring(1, 2);
             pixel.classList.forEach((className) => {
                 if (className.startsWith("bg-")) {

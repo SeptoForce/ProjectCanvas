@@ -55,15 +55,15 @@ $(function () {
             r: "red",
             y: "yellow",
             g: "green",
+            c: "cyan",
             b: "blue",
-            p: "purple",
-            w: "white",
-            k: "black",
+            f: "fuchsia",
         };
         for (let i = 0; i < code.length; i += 2) {
             let color = ColorDefinitions[code[i]];
-            let shape = code[i + 1];
-            returnString += `<div class="w-full h-full rounded-lg bg-${color}"></div>`;
+            let shade = code[i + 1];
+            console.log(color, shade);
+            returnString += `<div class='w-[2.1rem] h-[2.1rem] bg-${color}-${shade}00 rounded-[0.3rem]'></div>`;
         }
         return returnString;
     }

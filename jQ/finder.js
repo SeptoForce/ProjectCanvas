@@ -97,26 +97,27 @@ $(function () {
         });
     });
 
-    minValue.addEventListener("input", () => {
-        if (minValue.value === "") {
+    minValue.on("input", () => {
+        if (minValue.val() === "") {
             minValueURL = "";
         } else {
-            minValueURL = "&minValue=" + minValue.value;
+            minValueURL = "&minValue=" + minValue.val();
         }
         GetUserCanvases();
     });
 
-    maxValue.addEventListener("input", () => {
-        if (maxValue.value === "") {
+
+    maxValue.on("input", () => {
+        if (maxValue.val() === "") {
             maxValueURL = "";
         } else {
-            maxValueURL = "&maxValue=" + maxValue.value;
+            maxValueURL = "&maxValue=" + maxValue.val();
         }
         GetUserCanvases();
     });
 
-    backButton.addEventListener("click", () => {
-        window.location = "index.html";
+    backButton.on("click", () => {
+        window.history.back();
     });
 
     GetUserCanvases();
@@ -131,6 +132,7 @@ $(function () {
                 minValueURL +
                 maxValueURL,
             success: function (response) {
+                response = JSON.parse(response);
                 console.log(response);
                 let canvases = [];
                 $("#canvasShowcase").html("");
