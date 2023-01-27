@@ -50,6 +50,41 @@ loginButton.addEventListener('click', () => {
     }
 });
 
+registerEmail = document.getElementById('register_email');
+registerEmail.addEventListener('input', () => {
+    registerEmail.classList.remove('border-orange-600');
+
+    const emailErrorMessage = document.getElementById('emailErrorMessage');
+    emailErrorMessage.innerHTML = '';
+
+    let email = document.getElementById('register_email').value;
+    let emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    if(!emailRegex.test(email) && email != ''){
+        emailErrorMessage.innerHTML = 'Email is not valid!';
+        registerEmail.classList.add('border-orange-600');
+    }else{
+        emailErrorMessage.innerHTML = '';
+    }
+});
+
+repeatPassword = document.getElementById('repeat_password');
+repeatPassword.addEventListener('input', () => {
+    const registerPassword = document.getElementById('register_password');
+    registerPassword.classList.remove('border-orange-600');
+    repeatPassword.classList.remove('border-orange-600');
+
+    const passwordErrorMessage = document.getElementById('passwordErrorMessage');
+    passwordErrorMessage.innerHTML = '';
+
+    if(document.getElementById('register_password').value != document.getElementById('repeat_password').value && document.getElementById('repeat_password').value != ''){
+        passwordErrorMessage.innerHTML = 'Passwords do not match!';
+        repeatPassword.classList.add('border-orange-600');
+        registerPassword.classList.add('border-orange-600');
+    } else {
+        passwordErrorMessage.innerHTML = '';
+    }
+});
+
 registerButton.addEventListener('click', () => {
     if(currentState != 'register'){
         loginForm.classList.remove('flex');
