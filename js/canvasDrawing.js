@@ -264,3 +264,13 @@ function SetBegginingCanvas() {
         pixel.classList.add('bg-' + color + '-' + shade + '00');
     });
 }
+
+canvasOriginalCreatorUsername.addEventListener('click', () => {
+    let username = canvasOriginalCreatorUsername.innerHTML.substring(1, canvasOriginalCreatorUsername.innerHTML.length);
+    window.location.href = `../pages/collections.php?username=${username}`;
+});
+
+canvasCurrentOwnerUsername.addEventListener('click', () => {
+    let username = canvasCurrentOwnerUsername.innerHTML.substring(1, canvasCurrentOwnerUsername.innerHTML.length);
+    window.location.href = `../pages/collections.php?username=${username}`;
+});
