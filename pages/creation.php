@@ -68,10 +68,10 @@
                     <div class="text-sm border-b text-center w-4/5 py-5">
                         <p>_ ORIGINAL CREATOR _</p>
                         <p id="canvas_originalCreator" class="text-2xl">-</p>
-                        <p id="canvas_originalCreatorUsername" class="text-sm mb-5 text-orange-600">-</p>
+                        <p id="canvas_originalCreatorUsername" class="text-sm mb-5 text-orange-600 select-none cursor-pointer">-</p>
                         <p>_CURRENT OWNER_</p>
                         <p id="canvas_currentOwner" class="text-2xl">-</p>
-                        <p id="canvas_currentOwnerUsername" class="text-sm text-orange-600">-</p>
+                        <p id="canvas_currentOwnerUsername" class="text-sm text-orange-600 select-none cursor-pointer">-</p>
                     </div>
                     <div class="text-base border-b text-center w-4/5 py-5 flex justify-center items-center flex-col">
                         <p>_CURRENT VALUE_</p>

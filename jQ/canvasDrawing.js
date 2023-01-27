@@ -290,4 +290,14 @@ $(function () {
             pixel.classList.add("bg-" + color + "-" + shade + "00");
         });
     }
+
+    $("#canvas_originalCreatorUsername").on("click", function () {
+        let username = $("#canvas_originalCreatorUsername").text().substring(1);
+        window.location.href = `../pages/collections.php?username=${username}`;
+    });
+
+    $("#canvas_currentOwnerUsername").on("click", function () {
+        let username = $("#canvas_currentOwnerUsername").text().substring(1);
+        window.location.href = `../pages/collections.php?username=${username}`;
+    });
 });
