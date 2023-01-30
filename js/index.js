@@ -112,7 +112,6 @@ registerButton.addEventListener('click', () => {
             return;
         }
 
-    //check if email is valid using regex
         let email = document.getElementById('register_email').value;
         let emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
         if(!emailRegex.test(email)){
@@ -133,7 +132,6 @@ registerButton.addEventListener('click', () => {
     }
 });
 
-//when eneter is pressed submit the login form
 document.addEventListener('keydown', (event) => {
     if(event.key == 'Enter'){
         if(currentState == 'login'){

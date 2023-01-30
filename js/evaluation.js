@@ -32,7 +32,6 @@ GetCanvasOptions = () => {
             canvas1CanvasCode = response.canvasCode1;
             canvas2CanvasCode = response.canvasCode2;
 
-            //split canvas code by 2 characters and save in array
             let canvas1CodeArray = canvas1CanvasCode.match(/.{1,2}/g);
             let canvas2CodeArray = canvas2CanvasCode.match(/.{1,2}/g);
             

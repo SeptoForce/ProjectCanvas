@@ -53,7 +53,6 @@ function WriteCells(code) {
         'b' : 'blue',
         'f' : 'fuchsia',
     }
-    //split code into array by 2 characters
     let codeArray = code.match(/.{1,2}/g);
     codeArray.forEach((code, index) => {
         let color = ColorDefinitions[code[0]];
