@@ -1,4 +1,5 @@
 <?php
+//GETS TWO RANDOM CANVASES NOT OWNED BY USER
 session_start();
 $userID = $_SESSION['userid'];
 

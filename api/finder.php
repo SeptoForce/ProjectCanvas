@@ -1,4 +1,5 @@
 <?php
+//FINDER CODE FOR LISTING CANVASES
 session_start();
 $username = $_SESSION['username'];
 $sortType = $_REQUEST['sort'];
@@ -51,7 +52,7 @@ else{
     $qValue = "";
 }
 
-$querry = "SELECT * FROM designs".$qValue.$qSort;
+$querry = "SELECT * FROM designs".$qValue.$qSort; //SELECT * FROM designs WHERE value >=/<=/BETWEEN minValue/maxValue ORDER BY value/id ASC/DESC
 $result = mysqli_query($connection, $querry);
 
 $selection = array();
@@ -60,7 +61,7 @@ while($row = mysqli_fetch_assoc($result)){
 }
 $filteredSelection = array();
 
-foreach($selection as $design){
+foreach($selection as $design){ // LOOP THROUGH ALL CANVASES AND FILTER THEM BASED ON FILTER COLOR
     $designCode = $design['designcode'];
     $letterCount = array();
     for($i = 0; $i < strlen($designCode); $i++){
@@ -75,6 +76,18 @@ foreach($selection as $design){
             $letterCount[$letter]++;
         }
     }
+    $mostCommonLetters = array();
+    $numberOfMostCommonLetters = 0;
+    foreach ($letterCount as $letter => $count) {
+        if($count > $numberOfMostCommonLetters){
+            $mostCommonLetters = array($letter);
+            $numberOfMostCommonLetters = $count;
+        }
+        else if($count == $numberOfMostCommonLetters){
+            $mostCommonLetters[] = $letter;
+        }
+    }
+
     $mostCommonLetter = "";
     $mostCommonLetterCount = 0;
     foreach($letterCount as $letter => $count){
@@ -83,7 +96,9 @@ foreach($selection as $design){
             $mostCommonLetterCount = $count;
         }
     }
-    if($filterType == "all" || $filterType == $mostCommonLetter){
+
+
+    if($filterType == "all" || in_array($filterType, $mostCommonLetters)){
         $filteredSelection[] = $design;
     }
 }

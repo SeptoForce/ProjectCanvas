@@ -1,4 +1,5 @@
 <?php
+//GETS TOP 10 USERS
 $connection = mysqli_connect("localhost", "root", "", "projectcanvas");
 
 $getAllUsers = "SELECT * FROM users ORDER BY value DESC LIMIT 10";

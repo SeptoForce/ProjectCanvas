@@ -1,4 +1,5 @@
 <?php
+//PROCESSING THE SELECTION OF A CANVAS, INCREASING THE VALUE OF THE CANVAS AND THE CURRENCY OF THE USER
 session_start();
 $userID = $_SESSION['userid'];
 $selectedCanvas = $_REQUEST['selectedCanvas'];

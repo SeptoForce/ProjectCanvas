@@ -1,4 +1,5 @@
 <?php
+//PURCHASE CANVAS
 session_start();
 $userid = $_SESSION['userid'];
 $canvasCode = $_REQUEST['canvasCode'];
@@ -22,14 +23,14 @@ if (mysqli_num_rows($canvasExists) == 0) {
     $canvasExists = true;
 }
 
-if($userWallet < $canvasPrice){
+if($userWallet < $canvasPrice){ //CHECK IF USER HAS ENOUGH MONEY
     mysqli_close($connection);
     echo json_encode(array(
         'success' => 'false',
         'failWallet' => 'true',
     ));
     exit();
-}else{
+}else{ //IF USER HAS ENOUGH MONEY, PURCHASE NEW CANVAS OR OWNERSHIP OF EXISTING CANVAS
     if (!$canvasExists) {
         $createCanvasQuerry = "INSERT INTO designs (name, designcode, value) VALUES ('$canvasName', '$canvasCode', '$canvasPrice')";
         $applyCreatorQuerry = "INSERT INTO ownershiptransfer (designid, ownerid, date) VALUES (LAST_INSERT_ID(), '$userid', NOW())";

@@ -1,4 +1,5 @@
 <?php
+//GETS ALL CANVASES OWNED BY THE USER SORTED BY VALUE
 $username = $_REQUEST['username'];
 $connection = mysqli_connect("localhost", "root", "", "projectcanvas");
 

@@ -1,4 +1,5 @@
 <?php
+//CHANGING PASSWORD FOR THE USER
 session_start();
 $userid = $_SESSION['userid'];
 $newPassword = $_REQUEST['password'];

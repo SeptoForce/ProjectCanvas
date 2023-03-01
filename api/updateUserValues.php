@@ -1,4 +1,5 @@
 <?php
+// UPDATES THE VALUE OF ALL USERS
 $connection = mysqli_connect("localhost", "root", "", "projectcanvas");
 
 $getAllUsers = "";

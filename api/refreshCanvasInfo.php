@@ -1,4 +1,5 @@
 <?php
+//GETS INFO ABOUT A CANVAS
 session_start();
 $userid = $_SESSION['userid'];
 
